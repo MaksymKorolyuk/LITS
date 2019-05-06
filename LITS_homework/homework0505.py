@@ -4,12 +4,11 @@
 # Завдання 4. Написати програму, яка виконує над двома числами одну з чотирьох арифметичних операцій (додавання, віднімання, множення або ділення). Програма повинна завершуватися тільки за бажанням користувача. (Операцію також потрібно зчитати)
 
 # 1)
-num = str(int(input('Введіть Ваше число: ')))
-
-num_list = list(num)
-for i in range(len(num_list), 0, -1):
-    i -= 1
-    print(num_list[i])
+# num = str(int(input('Введіть Ваше число: ')))
+#
+# num_list = list(num)
+# for i in range(len(num_list) - 1, -1, -1):
+#     print(num_list[i])
 
 
 # 2)
@@ -23,21 +22,7 @@ for i in range(len(num_list), 0, -1):
 #
 # if len(num_list) == 1:
 #     print("Сума та добуток дорівнюють: " + str(num_list[0]))
-# elif len(num_list) == 2:
-#     num1 = int(num_list[0])
-#     num2 = int(num_list[1])
-#     if num1 == 0:
-#         summ1 = num2
-#         summ2 = num2
-#     elif num2 == 0:
-#         summ1 = num1
-#         summ2 = num1
-#     else:
-#         summ1 = num1 + num2
-#         summ2 = num1 * num2
-#     print("Сума: " + str(summ1))
-#     print("Добуток: " + str(summ2))
-# elif len(num_list) > 2:
+# elif len(num_list) >= 2:
 #     result = int(num_list[0])
 #     mult_result = int(num_list[0])
 #     for i in range(1, len(num_list)):
@@ -56,16 +41,16 @@ for i in range(len(num_list), 0, -1):
 
 
 # 3)
-# number = str(int(input("Введіть Ваше число: ")))
-# number_list = list(number)
-# even = odd = 0
-# for i in range(len(number_list)):
-#     if int(number_list[i]) % 2 == 0:
-#         even += 1
-#     else:
-#         odd += 1
-# print("Парні: " + str(even))
-# print("Непарні: " + str(odd))
+number = str(int(input("Введіть Ваше число: ")))
+number_list = list(number)
+even = odd = 0
+for i in range(len(number_list)):
+    if int(number_list[i]) % 2 == 0:
+        even += 1
+    else:
+        odd += 1
+print("Парні: " + str(even))
+print("Непарні: " + str(odd))
 
 
 # 4)
