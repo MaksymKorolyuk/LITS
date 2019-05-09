@@ -17,12 +17,29 @@
 #
 # y(-5)
 
+# def fib(n):
+#     """I make Fibonacci"""
+#     if n <= 2:
+#         return n
+#     else:
+#         return fib(n - 1) + fib(n - 2)
+#
+#
+# print(fib(5))
+# print(fib.__doc__)
 
-def fib(n):
-    if n <= 2:
-        return n
-    else:
-        return fib(n - 1) + fib(n - 2)
+
+# def printarg(first, *args):
+#     print(args, sep=',')
+#     print(type(args))
+#     print(args[3])
+#
+#
+# printarg()
+
+xs = [1, 5, -7, 20]
+print(min(*xs))
 
 
-print(fib(5))
+
+
