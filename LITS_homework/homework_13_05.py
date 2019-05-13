@@ -37,7 +37,6 @@ def the_shortest():
         if word.count(word) < result and word.isspace() != True:
             result = word.count(word)
     print("Довжина найкоротшого слова: ", result)
-    return words_list
 
 
 # the_shortest()
@@ -53,7 +52,7 @@ def percent():
             big += 1
         elif word.islower() and word.isspace() != True:
             small += 1
-    print("Відсоток великих букв = ", (big/(big + small))*100, "%")
+    print("Відсоток великих букв = ", (big/(big + small)) * 100, "%")
     print("Відсоток малих букв = ", (small / (big + small)) * 100, "%")
 
 
