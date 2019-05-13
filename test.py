@@ -1,23 +1,16 @@
-number_int = 10
-number_float = 10.5
-string = "My string"
-tuple1 = (10, 5, 7)
-list1 = [1, 2, 3]
-dict1 = {
-    1: "first string",
-    2: "second string",
-    3: "third string",
-}
-set1 = {1, 2, 3}
+arguments = input("Введите числа: ")
+arguments_list = arguments.split(',')
 
-#print(number_int, number_float, string, tuple1, list1, dict1, set1, sep="\n")
-#print(type(number_int), type(number_float), type(string), type(tuple1), type(list1), type(dict1), type(set1), sep="\n")
+arguments_tuple = tuple(arguments_list)
+print(arguments_tuple)
 
-print(number_int, type(number_int),
-      number_float, type(number_float),
-      string, type(string),
-      tuple1, type(tuple1),
-      list1, type(list1),
-      dict1,  type(dict1),
-      set1, type(set1),
-      sep="\n")
+def bounded_min(first, *args, lo=float("-inf"), hi=float("inf")):
+    res = hi
+    for arg in (first, ) + args:
+    #     if arg < res and lo < arg < hi:
+    #         res = arg
+    # return max(res, lo)
+        print(arg, "arg")
+
+
+bounded_min(-5, arguments_tuple, lo=10, hi=14)
