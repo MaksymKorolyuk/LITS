@@ -25,10 +25,27 @@ def numbers_and_letters():
 # numbers_and_letters()
 
 
-# 3)
+# 3) + 4)
+words_list = input("Введіть довільний рядок: ").split()
+
+
+def percent(the_shortest_func):
+    def inner():
+        the_shortest_func()
+        big = 0
+        small = 0
+        for word in words_list:
+            if word.isupper() and word.isspace() != True:
+                big += 1
+            elif word.islower() and word.isspace() != True:
+                small += 1
+        print("Відсоток великих букв = ", (big/(big + small)) * 100, "%")
+        print("Відсоток малих букв = ", (small / (big + small)) * 100, "%")
+    return inner
+
+
+@percent
 def the_shortest():
-    words_list = input("Введіть довільний рядок: ").split()
-    print(words_list)
     # print(min(words_list).__len__())
     # shortest = min(words_list)
     # print(shortest.__len__())
@@ -39,21 +56,4 @@ def the_shortest():
     print("Довжина найкоротшого слова: ", result)
 
 
-# the_shortest()
-
-
-# 4)
-def percent():
-    big = 0
-    small = 0
-    string = input("Введіть довільний рядок: ")
-    for word in string:
-        if word.isupper() and word.isspace() != True:
-            big += 1
-        elif word.islower() and word.isspace() != True:
-            small += 1
-    print("Відсоток великих букв = ", (big/(big + small)) * 100, "%")
-    print("Відсоток малих букв = ", (small / (big + small)) * 100, "%")
-
-
-percent()
+the_shortest()
