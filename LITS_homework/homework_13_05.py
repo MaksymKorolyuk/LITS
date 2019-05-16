@@ -29,17 +29,17 @@ def numbers_and_letters():
 def the_shortest():
     words_list = input("Введіть довільний рядок: ").split()
     print(words_list)
-    # print(min(words_list).__len__())
-    # shortest = min(words_list)
-    # print(shortest.__len__())
-    for word in words_list:
-        result = word.count(word)
-        if word.count(word) < result and word.isspace() != True:
-            result = word.count(word)
-    print("Довжина найкоротшого слова: ", result)
+    print(min(words_list).__len__())
+    shortest = min(words_list)
+    print(shortest)
+    # for word in words_list:
+    #     result = word.count(word)
+    #     if word.count(word) < result and word.isspace() != True:
+    #         result = word.count(word)
+    # print("Довжина найкоротшого слова: ", result)
 
 
-# the_shortest()
+the_shortest()
 
 
 # 4)
@@ -56,4 +56,4 @@ def percent():
     print("Відсоток малих букв = ", (small / (big + small)) * 100, "%")
 
 
-percent()
+# percent()
