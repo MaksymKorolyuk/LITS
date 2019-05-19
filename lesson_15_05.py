@@ -16,18 +16,9 @@ def rev_slice(l):
 
 def rev_for(l1):
     new_list = []
-    for item in range(len(l1), 0, -1):  # створення ренжом зворотньої індексації
-        new_list.append(item)
+    for i in range(len(l1), 0, -1):  # створення ренжом зворотньої індексації
+        new_list.append(l1[i - 1])
     print(new_list)
 
 
-# rev_for([1, 2, 3, 4, 5])
-
-
-# def rev_for2(rev_list):
-#     for item in range(len(rev_list)):
-#
-#     # print(rev_list)
-#
-#
-# rev_for2([1, 2, 3, 4, 5])
+# rev_for([1, 2, 3, 4, 8, 12])
