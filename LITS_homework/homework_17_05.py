@@ -1,6 +1,7 @@
-# написати дві функції сортування списку. Перша - сортування методом бульбашки, друга - методом вставки
+# 1) написати дві функції сортування списку. Перша - сортування методом бульбашки, друга - методом вставки
+# 2) Напишіть функцію, яка приймає текст (стрінг), а повертає словник, у якому ключі будуть окремі слова, а значенням - їхня кількість у тексті.
 
-
+# 1)
 def bubble_sort(lst):
     for i in range(len(lst) - 1):
         print("Iteration: ", i)
@@ -42,4 +43,17 @@ def count_elemts(lst):
     print(res)
 
 
-count_elemts([0, 2, 3, 4, 2, 1, 2, 4, 5, 1, 2, 0, 6, 6, 6])
+# count_elemts([0, 2, 3, 4, 2, 1, 2, 4, 5, 1, 2, 0, 6, 6, 6])
+# ---------------------------------------------------------
+# 2)
+
+
+def str_to_dict(string):
+    keys = tuple(string.split(" "))
+    res_dict = {}
+    for i in range(len(keys)):
+        res_dict.update({keys[i]: len(keys[i])})
+    return res_dict
+
+
+print(str_to_dict("shdgfgh jsfgjhs jsdfg sdhfgjh sfg"))
