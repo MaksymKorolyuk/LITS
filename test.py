@@ -1,21 +1,19 @@
-string = input("Enter your string: ")
-list_of_numbers = []
+# print('\n'.join([''.join([('Love'[(x-y) % len('Love')] if ((x*0.05)**2+(y*0.1)**2-1)**3-(x*0.05)**2*(y*0.1)**3 <= 0 else ' ') for x in range(-30, 30)]) for y in range(30, -30, -1)]))
+def fibonacci(x):
+    if x < 2: return 1
+    return (fibonacci(x - 2) + fibonacci(x - 1))
 
 
-def minimal(numbers_func):
-    def inner():
-        numbers_func()
-        res = min(list_of_numbers)
-        print(res)
-    return inner
+def factorial(x):
+    if x < 2: return 1
+    return (x * factorial(x - 1))
 
 
-@minimal
-def numbers():
-    for number in string:
-        if number.isdigit():
-            list_of_numbers.append(number)
-    print(list_of_numbers)
+def main():
+    funcs = [fibonacci, factorial]
+    n = 10
+    for i in range(len(funcs)):
+        print(funcs[i](n))
 
 
-numbers()
+main()
