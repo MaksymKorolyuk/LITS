@@ -5,13 +5,15 @@
 
 
 class Stack:
-    stack_list = [1, 2]
+    stack_list = []
 
     def __init__(self):
-        self.element = input("Enter new element: ")
+        self.i = int(input("How many elements would you like to add to your stack: "))
 
     def insert_element(self):
-        Stack.stack_list.append(self.element)
+        for j in range(self.i):
+            j = input("Enter new element: ")
+            Stack.stack_list.append(j)
         return Stack.stack_list
 
     @staticmethod
@@ -26,8 +28,13 @@ class Stack:
         else:
             print("Empty")
 
+    @staticmethod
+    def show_stack():
+        print(Stack.stack_list)
+
 
 new = Stack()
 print(new.insert_element())
-# print(Stack.delete_element())
+print("Deleted element: ", Stack.delete_element())
 Stack.empty_stack()
+new.show_stack()
