@@ -6,7 +6,6 @@
 
 class Stack:
     stack_list = [1, 2]
-    counter = 0
 
     def __init__(self):
         self.element = input("Enter new element: ")
@@ -23,14 +22,12 @@ class Stack:
     @staticmethod
     def empty_stack():
         if Stack.stack_list:
-            print("Not empty")
-            counter = len(Stack.stack_list)
-            print("Deep of stack: ", counter)
+            print("Not empty", "Deep of stack: " + str(len(Stack.stack_list)), sep="\n")
         else:
             print("Empty")
 
 
 new = Stack()
 print(new.insert_element())
-print(Stack.delete_element())
+# print(Stack.delete_element())
 Stack.empty_stack()
