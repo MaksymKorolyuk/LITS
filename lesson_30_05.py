@@ -86,7 +86,6 @@ import functools
 
 
 # клас My_dict, який наслідується від dict, об'єкт dict'a має записуватися через магічний метод __iadd__ в My_dict
-
 class Dict:
     dict = {}
     keys_list = []
@@ -111,5 +110,4 @@ class Dict:
 
 
 new_dict = Dict()
-
 print(new_dict.insert_in())
