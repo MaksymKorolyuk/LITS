@@ -7,8 +7,7 @@ def api_key():
     return api_key
 
 
-def get_weather(api_key, location):
-    lang = 'ua'
+def get_weather(api_key, location, lang):
     url = "https://api.openweathermap.org/data/2.5/weather?q={}&lang={}&units=metric&appid={}".format(location,
                                                                                                       lang,
                                                                                                       api_key)
@@ -18,8 +17,14 @@ def get_weather(api_key, location):
 
 
 def weather():
-    location = input('Enter the city name: ')
-    weather_data = get_weather(api_key(), location)
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--location')
+    parser.add_argument('--lang', default='en')
+    args = parser.parse_args()
+    location = args.location
+    lang = args.lang
+
+    weather_data = get_weather(api_key(), location, lang)
 
     print(f"""
 Координати місця знаходження об'єкту:
