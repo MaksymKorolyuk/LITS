@@ -18,8 +18,8 @@ def get_weather(api_key, location, lang):
 
 def weather():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--location')
-    parser.add_argument('--lang', default='en')
+    parser.add_argument('-loc')
+    parser.add_argument('-lan', default='en')
     args = parser.parse_args()
     location = args.location
     lang = args.lang
