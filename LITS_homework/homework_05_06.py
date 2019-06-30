@@ -1,28 +1,34 @@
 # Створити клас для римских цифр, який буде унаслідуватись від класу int.
 # Класовий конструктор повинен приймати значення(аргумент, який приймеє чаислове значення у різних форматах)
-# і параметер(ключове значення, тобто параметр за замовчуванням, який буде приймати у якому форматі ви передали значення у перший аргумет,
+# і параметер(ключове значення, тобто параметр за замовчуванням,
+# який буде приймати у якому форматі ви передали значення у перший аргумет,
 # тобто у бінарному, вісімковому, десятковому або шістнадцятковому).
 # За допомогою магічних методів ви маєте забезпечити роботу математичних операторів (-,+,/,*,<,>,==, <=, >=, !=)
 # при роботі екземплярів класу як з іншоми екземплярами цього класу, так і з цілими числами
 
 
 class RomanNumber(int):
-    @classmethod
-    def roman_construct(cls, number, system=10):
-        if system == 2:
-            cls.number = str(number)
-            cls.number = int(cls.number, 2)
-            print(cls.number)
-        elif system == 8:
-            cls.number = str(number)
-            cls.number = int(cls.number, 8)
-            print(number)
-        elif system == 16:
-            cls.number = str(number)
-            cls.number = int(cls.number, 16)
-            print(number)
+    def __init__(self, number, system=10):
+        self.number, self.system = str(number), system
+        self.dec = int(self.number, self.system)
+
+    def checkio(self):
+        ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+        tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+        hunds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+        thous = ["", "M", "MM", "MMM", "MMMM"]
+
+        t = thous[self.dec // 1000]
+        h = hunds[self.dec // 100 % 10]
+        te = tens[self.dec // 10 % 10]
+        o = ones[self.dec % 10]
+
+        self.res = t + h + te + o
+        return self.res
+
+    def __str__(self):
+        return str(self.checkio())
 
 
-# roman_number = RomanNumber.roman_construct(1000, 2)
-# print(RomanNumber.roman_construct(1000, 2))
-RomanNumber.roman_construct(2322, 2)
+new_roman = RomanNumber('15', 10)
+print(new_roman)

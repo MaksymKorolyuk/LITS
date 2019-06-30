@@ -15,12 +15,15 @@ def matrix():
 # matrix()
 
 # 2)
-def prime_list(i):
-    primes_list = []
-    if i == 0 or i == 1:
-        print(i)
-    else:
-        primes_list = [n for n in range(2, i) if i % n == 0]
+def prime_list(j):
+    def is_prime(i):
+        if i == 2:
+            return True
+        for n in range(2, i):
+            if i % n == 0:
+                return False
+        return True
+    primes_list = [i for i in range(2, j) if is_prime(i)]
     print(primes_list)
 
 

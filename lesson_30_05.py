@@ -86,7 +86,6 @@ import functools
 
 
 # клас My_dict, який наслідується від dict, об'єкт dict'a має записуватися через магічний метод __iadd__ в My_dict
-
 class Dict:
     def __init__(self, dict):
         self.dict = dict
@@ -96,6 +95,14 @@ class Dict:
         return other.dict
 
 
+
 res = Dict({'key1': 'value1', 'key2': 'value2', })
 new_res = {'key3': 'value3'}
 print(res.__iadd__(res, new_res))
+
+
+# class My_dict(Dict):
+# def __iadd__(self, other):
+
+
+
