@@ -23,13 +23,13 @@ def weather():
 
     print(f"""
 Координати місця знаходження об'єкту:
-    Довгота: {weather_data['coord']['lon']}
-    Широта: {weather_data['coord']['lat']}
+    Довгота: {weather_data['coord']['lon']},
+    Широта: {weather_data['coord']['lat']},
 Погода:
-    Погода: {weather_data['weather'][0]['description']}
-    Температура: {weather_data['main']['temp']} градусів Цельсія
-    Тиск: {weather_data['main']['pressure']} hPa
-    Вологість: {weather_data['main']['humidity']} %
+    Погода: {weather_data['weather'][0]['description']},
+    Температура: {weather_data['main']['temp']} градусів Цельсія,
+    Тиск: {weather_data['main']['pressure']} hPa,
+    Вологість: {weather_data['main']['humidity']} %,
 """)
 
 

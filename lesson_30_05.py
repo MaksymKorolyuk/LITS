@@ -87,27 +87,22 @@ import functools
 
 # клас My_dict, який наслідується від dict, об'єкт dict'a має записуватися через магічний метод __iadd__ в My_dict
 class Dict:
-    dict = {}
-    keys_list = []
-    values_list = []
-    i = int(input("How many key - values: "))
+    def __init__(self, dict):
+        self.dict = dict
 
-    def __init__(self):
-        for j in range(Dict.i):
-            self.keys = input("Insert a key: ")
-            self.values = input("Insert a value: ")
-            Dict.keys_list.append(self.keys)
-            Dict.values_list.append(self.values)
+    def __iadd__(self, other, new_res):
+        self.dict.update(new_res)
+        return other.dict
 
-    def insert_in(self):
-        for j in range(Dict.i):
-            Dict.dict.update({Dict.keys_list[j]: Dict.values_list[j]})
-        return Dict.dict
+
+
+res = Dict({'key1': 'value1', 'key2': 'value2', })
+new_res = {'key3': 'value3'}
+print(res.__iadd__(res, new_res))
 
 
 # class My_dict(Dict):
 # def __iadd__(self, other):
 
 
-new_dict = Dict()
-print(new_dict.insert_in())
+
